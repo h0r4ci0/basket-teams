@@ -48,7 +48,7 @@ acceptButton.addEventListener("click", () => {
     : 2;
 
   if (players.length < teamCount) {
-    console.log("Not enough players to make teams");
+    alert("Not enough players to make teams");
     return;
   }
 
