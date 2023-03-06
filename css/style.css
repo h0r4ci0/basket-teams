@@ -144,10 +144,25 @@ body {
 #accept-button:hover {
     background-color: #3e8e41;
 }
-header nav a:hover,
-header nav a:active {
-  color: #fff;
-  background-color: #333;
+a:link {
+  color: #999999;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:visited {
+  color: #999999;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
 }
 #header {
   position: fixed;
