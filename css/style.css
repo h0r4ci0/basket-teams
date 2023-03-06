@@ -116,6 +116,35 @@ body {
     background: #265df2;
 }
 
+.button-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-mode,
+#create-teams {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggle-mode:hover,
+#create-teams:hover {
+    background-color: #3e8e41;
+}
+
 .swiper-navBtn {
     color: #6e93f7;
     transition: color 0.3s ease;
@@ -139,6 +168,56 @@ body {
 }
 .swiper-pagination-bullet-active {
     background-color: #4070f4;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-label {
+    display: block;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #c4c4c4;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.switch-label::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: left 0.2s;
+}
+
+.switch:checked + .switch-label {
+    background-color: #6db04c;
+}
+
+.switch:checked + .switch-label::after {
+    left: 33px;
+}
+
+.switch-text {
+    margin-left: 10px;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {
