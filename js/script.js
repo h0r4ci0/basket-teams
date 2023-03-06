@@ -27,3 +27,13 @@ var swiper = new Swiper(".slide-content", {
     },
   },
 });
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach((card) => {
+  const selectButton = card.querySelector(".button");
+  selectButton.addEventListener("click", () => {
+    card.classList.toggle("selected");
+    swiper.update(); // Actualiza la posición de los elementos en el slider
+  });
+});
