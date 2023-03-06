@@ -145,34 +145,34 @@ body {
     background-color: #3e8e41;
 }
 a:link {
-  color: #999999;
-  background-color: transparent;
-  text-decoration: underline;
+    color: #999999;
+    background-color: transparent;
+    text-decoration: underline;
 }
 a:visited {
-  color: #999999;
-  background-color: transparent;
-  text-decoration: underline;
+    color: #999999;
+    background-color: transparent;
+    text-decoration: underline;
 }
 a:hover {
-  color: green;
-  background-color: transparent;
-  text-decoration: underline;
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: underline;
 }
 a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: underline;
 }
 #header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
 }
 .swiper-navBtn {
     color: #6e93f7;
