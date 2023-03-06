@@ -28,23 +28,50 @@ var swiper = new Swiper(".slide-content", {
   },
 });
 
+const acceptButton = document.querySelector("#accept-button");
 const cards = document.querySelectorAll(".card");
 
 cards.forEach((card) => {
-  const selectButton = card.querySelector(".button");
-  selectButton.addEventListener("click", () => {
+  const button = card.querySelector("button");
+  button.addEventListener("click", () => {
     card.classList.toggle("selected");
-    swiper.update(); // Actualiza la posición de los elementos en el slider
-    if (card.classList.contains("selected")) {
-      card.dataset.selected = "true";
-    } else {
-      card.removeAttribute("data-selected");
-    }
   });
 });
 
-let teams = 2;
-const switchButton = document.getElementById("switch-button");
-switchButton.addEventListener("click", () => {
-  teams = teams === 2 ? 3 : 2;
+acceptButton.addEventListener("click", () => {
+  const selectedCards = document.querySelectorAll(".selected");
+  const players = Array.from(selectedCards).map((card) => card.querySelector(".name").textContent);
+  const teamCount = document.querySelector("#triangular-switch").checked
+    ? 3
+    : 2;
+
+  if (players.length < teamCount) {
+    console.log("Not enough players to make teams");
+    return;
+  }
+
+  const teams = [];
+  for (let i = 0; i < teamCount; i++) {
+    teams.push([]);
+  }
+
+  let teamIndex = 0;
+  while (players.length > 0) {
+    const randomIndex = Math.floor(Math.random() * players.length);
+    const player = players.splice(randomIndex, 1)[0];
+    teams[teamIndex].push(player);
+    teamIndex = (teamIndex + 1) % teamCount;
+  }
+
+  console.log(`Teams (${teamCount}):`);
+  for (let i = 0; i < teamCount; i++) {
+    console.log(
+      `Team ${i + 1}: ${teams[i].join(", ")}`
+    );
+  }
 });
+
+// const aceptarButton = document.getElementById("create-teams");
+// aceptarButton.addEventListener("click", () => {
+//   window.location.href = "pages/teams.html";
+// });

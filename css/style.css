@@ -129,7 +129,7 @@ body {
 }
 
 #toggle-mode,
-#create-teams {
+#accept-button {
     margin: 0 10px;
     padding: 10px 20px;
     font-size: 16px;
@@ -141,7 +141,7 @@ body {
 }
 
 #toggle-mode:hover,
-#create-teams:hover {
+#accept-button:hover {
     background-color: #3e8e41;
 }
 
