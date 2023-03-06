@@ -40,7 +40,9 @@ cards.forEach((card) => {
 
 acceptButton.addEventListener("click", () => {
   const selectedCards = document.querySelectorAll(".selected");
-  const players = Array.from(selectedCards).map((card) => card.querySelector(".name").textContent);
+  const players = Array.from(selectedCards).map(
+    (card) => card.querySelector(".name").textContent
+  );
   const teamCount = document.querySelector("#triangular-switch").checked
     ? 3
     : 2;
@@ -63,15 +65,8 @@ acceptButton.addEventListener("click", () => {
     teamIndex = (teamIndex + 1) % teamCount;
   }
 
-  console.log(`Teams (${teamCount}):`);
-  for (let i = 0; i < teamCount; i++) {
-    console.log(
-      `Team ${i + 1}: ${teams[i].join(", ")}`
-    );
-  }
+  const teamString = teams
+    .map((team, index) => `Team ${index + 1}: ${team.join(", ")}`)
+    .join("\n");
+  alert(`Teams (${teamCount}):\n${teamString}`);
 });
-
-// const aceptarButton = document.getElementById("create-teams");
-// aceptarButton.addEventListener("click", () => {
-//   window.location.href = "pages/teams.html";
-// });
