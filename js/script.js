@@ -35,5 +35,16 @@ cards.forEach((card) => {
   selectButton.addEventListener("click", () => {
     card.classList.toggle("selected");
     swiper.update(); // Actualiza la posición de los elementos en el slider
+    if (card.classList.contains("selected")) {
+      card.dataset.selected = "true";
+    } else {
+      card.removeAttribute("data-selected");
+    }
   });
+});
+
+let teams = 2;
+const switchButton = document.getElementById("switch-button");
+switchButton.addEventListener("click", () => {
+  teams = teams === 2 ? 3 : 2;
 });
