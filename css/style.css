@@ -144,7 +144,21 @@ body {
 #accept-button:hover {
     background-color: #3e8e41;
 }
-
+header nav a:hover,
+header nav a:active {
+  color: #fff;
+  background-color: #333;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
 .swiper-navBtn {
     color: #6e93f7;
     transition: color 0.3s ease;
