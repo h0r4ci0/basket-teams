@@ -48,7 +48,7 @@ acceptButton.addEventListener("click", () => {
     : 2;
 
   if (players.length < teamCount) {
-    alert("Not enough players to make teams");
+    alert("❗ Not enough players to make teams");
     return;
   }
 
@@ -66,7 +66,15 @@ acceptButton.addEventListener("click", () => {
   }
 
   const teamString = teams
-    .map((team, index) => `Team ${index + 1}: ${team.join(", ")}`)
+    .map((team, index) => {
+      if (index === 0) {
+        return `Team 1 🏀: ${team.join(", ")}`;
+      } else if (index === 1) {
+        return `Team 2 📍: ${team.join(", ")}`;
+      } else {
+        return `Team 3 ${team.length ? "🏳️" : "🏳️"}: ${team.join(", ")}`;
+      }
+    })
     .join("\n");
   alert(`Teams (${teamCount}):\n${teamString}`);
 });
